@@ -1,0 +1,100 @@
+body{
+     background-color:#F6F4EF;
+}
+
+
+#linkforlogo{
+    line-height:0;
+    .logo{
+        margin: 24px 0;
+        padding-right: 20px;
+    
+    .logoimg{
+        min-width: 108px;
+        min-height: 32px;
+        overflow: hidden;
+        img{
+            @extend %img;
+        }
+    }
+    }
+}
+#headerul{
+    @include flexbox(center, center);
+    li a{
+padding: 0 20px;
+ font-family: "Bricolage Grotesque", sans-serif;
+line-height: 80px;
+font-size: 16px;
+text-decoration: none;
+font-weight: normal;
+color: $color-text;
+transition: all ease-in-out 0.5s;
+&:hover{
+    color:$color-primary ;
+}
+    }
+
+}
+
+.right{
+    @include flexbox(center,baseline,row,25px);}
+    a{
+        font-family: "Bricolage Grotesque", Sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        color: $color-secondary;
+    text-decoration: none;
+    line-height: 80px;
+
+    transition: all ease-in-out 0.5s;
+    
+    &:hover{
+        color:$color-primary ;
+    }
+    }
+   
+    .button{
+        font-family: "Bricolage Grotesque", Sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: None;
+        line-height: 1em;
+        text-align: center;
+    color: $color-secondary;
+    display: inline-block;
+    padding: clamp(14px, .8em, 18px) clamp(18px, 1.8em, 36px);
+    padding: 19px 36px 19px 36px;
+    background-color: $color-primary;
+    border-radius: 100px;
+    align-self: center;
+    letter-spacing: 0.027em;
+
+    border: none;
+    transition: all .2s cubic-bezier(.68,.01,.58,.75) !important;    display: inline-block;
+    &:hover{
+        background-color:$color-accent !important ;
+    }
+    
+
+}
+.header {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .header.hidden {
+    transform: translateY(-100%); 
+  }
+  
+  .header.scrolled {
+    background-color: #FFFFFF;
+    box-shadow: -2px 3px 90px -20px rgb(0 0 0 / 25%);  }
+
+
+   

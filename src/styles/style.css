@@ -1,0 +1,366 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.fleft .flogo img, .girlimg .girl .abslt img, #linkforlogo .logo .logoimg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body {
+  background-color: #F6F4EF;
+}
+
+#linkforlogo {
+  line-height: 0;
+}
+#linkforlogo .logo {
+  margin: 24px 0;
+  padding-right: 20px;
+}
+#linkforlogo .logo .logoimg {
+  min-width: 108px;
+  min-height: 32px;
+  overflow: hidden;
+}
+#headerul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#headerul li a {
+  padding: 0 20px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 80px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: normal;
+  color: #404040;
+  transition: all ease-in-out 0.5s;
+}
+#headerul li a:hover {
+  color: #F0844E;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-direction: row;
+  gap: 25px;
+}
+
+a {
+  font-family: "Bricolage Grotesque", Sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  color: #171717;
+  text-decoration: none;
+  line-height: 80px;
+  transition: all ease-in-out 0.5s;
+}
+a:hover {
+  color: #F0844E;
+}
+
+.button {
+  font-family: "Bricolage Grotesque", Sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: None;
+  line-height: 1em;
+  text-align: center;
+  color: #171717;
+  display: inline-block;
+  padding: clamp(14px, 0.8em, 18px) clamp(18px, 1.8em, 36px);
+  padding: 19px 36px 19px 36px;
+  background-color: #F0844E;
+  border-radius: 100px;
+  align-self: center;
+  letter-spacing: 0.027em;
+  border: none;
+  transition: all 0.2s cubic-bezier(0.68, 0.01, 0.58, 0.75) !important;
+  display: inline-block;
+}
+.button:hover {
+  background-color: #F6C143 !important;
+}
+
+.header {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.header.hidden {
+  transform: translateY(-100%);
+}
+
+.header.scrolled {
+  background-color: #FFFFFF;
+  box-shadow: -2px 3px 90px -20px rgba(0, 0, 0, 0.25);
+}
+
+.leftside {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+.leftside h1 {
+  text-align: left;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.027em;
+  text-transform: none;
+  font-style: normal;
+  color: #171717;
+  font-size: 64px;
+  margin-top: 0.67em;
+  margin-bottom: 20px;
+}
+.leftside p {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: normal;
+  line-height: 1.6;
+  letter-spacing: 0.027em;
+  text-transform: none;
+  font-style: normal;
+  color: #404040;
+  padding-bottom: 40px;
+  font-size: 19px;
+  max-width: 450px;
+}
+
+.leftside #checks {
+  display: grid;
+  gap: 20px;
+}
+.leftside #checks li .yes {
+  padding: 11px;
+  border-radius: 50%;
+  font-size: 16px;
+  background-color: #F0844E;
+  margin-right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+}
+.leftside #checks li .yes i {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.leftside #checks li .text {
+  font-family: "Lato", Sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #171717;
+  letter-spacing: -0.027em;
+}
+
+.girlimg {
+  max-width: 608px;
+  max-height: 581px;
+  padding-top: 130px;
+}
+.girlimg .girl {
+  position: relative;
+}
+.girlimg .girl .abslt {
+  position: absolute;
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  top: -120px;
+  left: 0px;
+}
+.girlimg .girl .containerfor {
+  max-width: 580px;
+  max-height: 410px;
+  position: relative;
+  padding: 8px 8px 0px 0px;
+}
+.girlimg .girl .containerfor .new {
+  width: 100%;
+  height: auto;
+  background-image: url("https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Image-Mask.webp");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-mask-image: url("https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Image-Mask.webp");
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: url("https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Image-Mask.webp");
+  mask-size: contain;
+  mask-position: center center;
+  mask-repeat: no-repeat;
+}
+.girlimg .girl .containerfor::before {
+  content: "";
+  background-image: url("https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Learn-Stroke.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fleft {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+.fleft .flogo {
+  max-width: 120px;
+  max-height: 36px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.fleft p {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 450;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-style: normal;
+  color: #404040;
+  padding-bottom: 40px;
+  font-size: 16px;
+  max-width: 250px;
+  opacity: 0.8;
+}
+.fleft .twologos i {
+  font-size: 28px;
+  width: 1.25em;
+  color: #404040;
+  transition: all ease-in-out 0.3s;
+}
+.fleft .twologos i:hover {
+  color: #F0844E;
+}
+
+.flist {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  line-height: 1.5em;
+}
+.flist .beggining {
+  color: #A3A3A3;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+.flist ul li {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #171717;
+  letter-spacing: 0.04em;
+  transition: all ease-in-out 0.3s;
+}
+.flist ul li:hover {
+  color: #F0844E;
+}
+
+.last {
+  justify-content: start;
+  gap: 0.5em;
+}
+.last input {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: normal;
+  color: #171717;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: rgba(177, 177, 177, 0.3098039216);
+  border-radius: 8px 8px 8px 8px;
+  padding: 8px 16px 8px 16px;
+  height: auto;
+  line-height: 40px !important;
+  max-width: 100%;
+  width: 100%;
+  border: 1px solid #e6e9ec;
+  font-style: normal;
+  letter-spacing: 0.03em;
+  background: #f8f8f8;
+  outline: none;
+}
+.last input ::-moz-placeholder {
+  background-color: transparent;
+}
+.last input ::placeholder {
+  background-color: transparent;
+}/*# sourceMappingURL=style.css.map */

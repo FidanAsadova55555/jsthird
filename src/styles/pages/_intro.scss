@@ -1,0 +1,110 @@
+.leftside{
+    @include flexbox(center, start,column);
+    
+    h1{
+    text-align: left;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 700;
+    line-height:1.2;
+    letter-spacing: 0.027em;
+    text-transform:none;
+    font-style: normal;
+    color: $color-secondary;
+    font-size: 64px;
+    margin-top: .67em ;
+    margin-bottom: 20px;}
+p{
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight:normal;
+    line-height:1.6;
+    letter-spacing: 0.027em;
+    text-transform: none;
+    font-style: normal;
+    color:$color-text;
+    padding-bottom: 40px;
+    font-size: 19px;
+    max-width: 450px;
+}
+
+    
+
+}
+// .bgimg{
+//    max-height: 573px;
+//    width: auto;
+//    position: relative;
+//    img{
+//     @extend %img;
+//    }
+//    .topleft {
+//     max-width: 210px;
+//     max-height: 137px;
+//     overflow: hidden;
+//     position: absolute;
+//     top: 10px;
+//     left: 20px;
+//     border-radius: 60px;
+//     z-index: 1;
+//     border: 1px solid black ;
+//     padding-top: 10px;
+  
+//     img {
+//         @extend %img;
+//         border-radius: 60px;
+
+//     }
+// }  
+
+//    .topright{
+//     max-height: 120px;
+//     max-width: 120px;
+//     border-radius: 50%;
+//     overflow: hidden;
+//     position: absolute;
+//     top: 50px; right: 50px;
+
+
+//     img{
+//         @extend %img;
+//        }
+//    }
+//    .bottomleft{
+//     max-height: 120px;
+//     max-width: 120px;
+//     border-radius: 50%;
+//     overflow: hidden;
+//     position: absolute;
+//     bottom: 50px; left: 50px;
+
+
+//     img{
+//         @extend %img;
+//        }
+//    }
+//    .bottomright{
+//     max-width: 210px;
+//     max-height: 137px;   
+//     border-radius: 60px;
+//     position: absolute;
+//     bottom: -5px; right: 30px;
+//     border: 1px solid black ;
+//     padding-bottom:10px;
+//     img{
+//         @extend %img;
+//         border-radius: 60px;
+//        }
+//    }
+ 
+//    .centerimg{
+//     max-width: 240px;
+//     max-height:208px;
+//     border-radius: 12px;
+//     position: absolute;
+//     inset: 0;
+//     top: 50%;
+//     left: 50%;
+//     outline: 25px solid #e2e0db ;
+//     transform: translate(-50%, -50%);
+//     overflow: hidden;
+//    }
+// }

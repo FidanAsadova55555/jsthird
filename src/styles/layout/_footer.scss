@@ -1,0 +1,96 @@
+.fleft{
+    @include flexbox(center, start,column);
+    .flogo{
+        max-width:120px ;
+        max-height: 36px;
+        overflow: hidden;
+        margin-bottom: 30px;
+
+        img{
+            @extend %img;
+        }
+    }
+    p{
+        font-family: "Bricolage Grotesque", sans-serif;
+    font-weight:450;
+    line-height:1.6;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    font-style: normal;
+    color:$color-text;
+    padding-bottom: 40px;
+    font-size: 16px;
+    max-width: 250px;
+    opacity: 0.8;
+    }
+    .twologos{
+        
+        i{
+            font-size: 28px;
+            width: 1.25em;
+            color: #404040;
+            transition: all ease-in-out 0.3s;
+            &:hover{
+                color:$color-primary ;
+            }
+        }
+      
+    }
+
+}
+.flist{
+    @include flexbox(center, start,column);
+    line-height:1.5em;           
+
+    .beggining{
+        color: #A3A3A3;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    }
+    ul{
+        li{
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #171717;
+             letter-spacing: 0.04em;
+             transition: all ease-in-out 0.3s;
+             &:hover{
+                 color:$color-primary ;
+             }
+        }
+    }
+}
+.last{
+    justify-content: start;
+    gap: 0.5em;
+    input{
+        font-family: "Bricolage Grotesque", sans-serif;
+
+        font-weight: normal;
+        color: #171717;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #B1B1B14F;
+    border-radius: 8px 8px 8px 8px;
+    padding: 8px 16px 8px 16px;
+    height: auto;
+    line-height: 40px !important;
+    max-width: 100%;
+    width: 100%;
+    border:  1px solid #e6e9ec;
+    font-style: normal;
+    letter-spacing: 0.03em;
+    background: #f8f8f8;
+    outline: none;
+        ::placeholder{
+background-color: transparent;
+        }
+
+    }
+}
+

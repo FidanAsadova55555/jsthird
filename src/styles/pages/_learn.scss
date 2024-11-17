@@ -1,0 +1,98 @@
+.leftside{
+#checks{
+    display: grid;
+    gap: 20px;
+     li{
+
+    .yes{
+        padding: 11px;
+        border-radius: 50%;
+        font-size: 16px;
+        background-color:$color-primary;
+        margin-right: 16px;
+        @include flexbox(center, center);
+        display: inline-block;
+
+    
+        i{
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;       
+    }
+    
+}
+.text{
+    font-family: "Lato", Sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: $color-secondary;
+    letter-spacing: -0.027em;
+}
+}}}
+.girlimg{
+    max-width: 608px;
+    max-height: 581px;
+padding-top: 130px;
+    .girl{
+       
+        position: relative;
+    
+        .abslt{
+            position: absolute;
+            max-width: 120px;
+            max-height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            top: -120px;
+            left: 0px;
+          img{
+            @extend %img;
+          }
+        }
+        .containerfor {
+            
+            max-width: 580px;
+            max-height: 410px;
+            position: relative;
+        padding: 8px 8px 0px 0px;
+    
+            .new {
+                width: 100%; 
+                height: auto;
+                
+                background-image: url('https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Image-Mask.webp');
+                background-size: contain;
+                background-position: center center;
+                background-repeat: no-repeat;
+        
+                -webkit-mask-image: url('https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Image-Mask.webp');
+                -webkit-mask-size: contain;
+                -webkit-mask-position: center center;
+                -webkit-mask-repeat: no-repeat;
+        
+                mask-image: url('https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Image-Mask.webp');
+                mask-size: contain;
+                mask-position: center center;
+                mask-repeat: no-repeat;
+            }
+        
+            &::before {
+                content: "";
+                background-image: url('https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Learn-Stroke.webp');
+                background-repeat: no-repeat;
+                background-size: contain;
+                opacity: 1;
+                z-index: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+        
+        
+        
+      
+    }
+}
