@@ -1,0 +1,57 @@
+#brands {
+    .headtext{
+        margin-bottom: 40px;
+text-align: center;
+        h4{
+            font-family: "Bricolage Grotesque", sans-serif;
+color: $color-text;
+font-weight: 700;
+    line-height:1.4;
+    letter-spacing: 0.027em;
+    font-style: normal;
+    font-size: 24px;
+        }
+    }
+    .logocontainer {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 24px;
+  
+      .one {
+        box-shadow: 0px 6px 12px 0px rgba(47, 43, 67, 0.1);
+        border-radius: 8px;
+        height: 80px;
+        border-style: none;
+        border-width: 2px;
+        overflow: hidden;
+        border-color: #e7e7e7;
+  
+        .logofigure {
+          background-color: #FFFFFF;
+          padding: 10px;
+          @include flexbox(center, center);
+
+          width: 100%;
+          height: 100%;
+  
+          img {
+            height: 150px;
+            width: 150px;
+            object-fit: contain;
+            max-width: 100%;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            aspect-ratio: auto 378 / 148;
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .logocontainer {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  

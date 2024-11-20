@@ -1,0 +1,35 @@
+.createlogo{
+    border-radius: 5px;
+    border: 1px solid #e2e0db;
+    margin-top: 150px;
+    padding: 25px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-bottom: 155px;
+    form {
+        .placeforinput {
+            input {
+                &:hover,
+                &:focus,
+                &:active {
+                    outline: none;
+                    border: none;
+                    box-shadow: none;
+                }}}}
+}
+.align{
+vertical-align: middle;
+
+}
+
+
+
+
+.tableimg{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    img{
+        @extend %img;
+        object-fit: contain;
+    }
+}
