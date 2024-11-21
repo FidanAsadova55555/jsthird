@@ -50,5 +50,35 @@
       "name": "exeo",
       "img": "https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Logo-2.webp"
     }
+  ],
+  "online": [
+    {
+      "id": "1",
+      "header": "Flexible time",
+      "backgroundimgcolor": "#d9a5b3",
+      "logoimg": "https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Why-Icon-5.webp",
+      "description": "Online education allows teachers and students to set their own pace of learning, and there is added flexibility in setting a schedule that fits."
+    },
+    {
+      "id": "2",
+      "header": "Certificate",
+      "backgroundimgcolor": "#1868ae",
+      "logoimg": "https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Why-Icon-2.webp",
+      "description": "Teachers and students to set their own pace of learning, and there is added flexibility in setting a schedule that fits everyone’s agenda."
+    },
+    {
+      "id": "3",
+      "header": "Class program options",
+      "backgroundimgcolor": "#c6d7eb",
+      "logoimg": "https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Why-Icon-3.webp",
+      "description": "Allows teachers and students to set their own pace of learning, and there is added flexibility in setting a schedule that fits everyone’s agenda."
+    },
+    {
+      "id": "4",
+      "header": "Access anywhere",
+      "backgroundimgcolor": "pink",
+      "logoimg": "https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Why-Icon-4.webp",
+      "description": "Online education allows teachers and students to set their own pace of learning, and there is added flexibility in setting a schedule."
+    }
   ]
 }

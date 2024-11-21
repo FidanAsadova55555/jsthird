@@ -1,0 +1,48 @@
+#online{
+    
+    .leftside{
+        .iconcontainer{
+            margin-bottom: 16px;
+
+            #circle{
+                border-top-left-radius:75%;
+                border-top-right-radius: 90%;
+                border-bottom-left-radius:90%;
+                border-bottom-right-radius:90% ;
+
+width: 80px;
+height: 80px;
+background-color: pink;
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                line-height: 1;
+                text-align: center;
+                position: relative;
+                box-sizing: content-box;
+                
+                
+                img{
+                    position: relative;
+                    display: block;
+                    transition: transform 350ms cubic-bezier(.24, .85, .58, 1);
+                    z-index: 1;
+                    max-width: 100%;
+                    border: none;
+                    border-radius: 0;
+                    box-shadow: none;
+                    height: 40px;
+                    width: 40px;
+                    object-fit: cover;
+                      }
+            }
+            }
+        }
+    }
+
+@media (min-width: 768px) {
+    .iconcontainer {
+        display: inline-block;
+    }
+}

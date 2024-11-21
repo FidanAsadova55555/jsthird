@@ -1,72 +1,159 @@
 const instance = axios.create({
   baseURL: "http://localhost:3001",
-  timeout: 3000, 
+  timeout: 3000,
 });
-const logoHtml=document.getElementById("logotabledata")
 
-const fetchDynamicApiData = async (url, cb) => {
+const logoHtml = document.getElementById("logotabledata");
+const createLogoForm = document.getElementById("createlogoform");
+const logoImg = document.getElementById("img");
+
+const fetchData = async (url) => {
   try {
     const res = await instance.get(url);
-    cb(res.data);
+    return res.data;
   } catch (error) {
     console.error("Error fetching data:", error);
+    return [];
   }
 };
-const createLogo=async (url,data)=>{
-  await instance.post(url,data).then((res) => {
-    fetchDynamicApiData("/data")
-  
+
+const createLogo = async (url, data) => {
+  try {
+    await instance.post(url, data);
+    refreshLogos();
+  } catch (error) {
+    console.error("Error creating logo:", error);
+  }
+};
+
+const deleteLogo = async (url, id) => {
+  try {
+    await instance.delete(`${url}/${id}`);
+    refreshLogos();
+  } catch (error) {
+    console.error("Error deleting logo:", error);
+  }
+};
+
+const refreshLogos = async () => {
+  const data = await fetchData("/data");
+  renderLogos(data);
+};
+
+const renderLogos = (data) => {
+  logoHtml.innerHTML = ""; 
+  data.forEach((logo, index) => {
+    const logoRow = `
+      <tr>
+        <th  class="align" scope="row">${index + 1}</th>
+        <td class="align">
+          <div class="tableimg">
+            <img src="${logo.img || 'https://picsum.photos/200/300'}" alt="Logo" />
+          </div>
+        </td>
+        <td class="align">
+          <button class="btn-danger shadow-none delete-logo" data-id="${logo.id}">Delete</button>
+        </td>
+      </tr>`;
+    logoHtml.innerHTML += logoRow;
   });
-};
-const justDeleteLogo=async(url,id)=>{
-  await instance.delete(`${url}/${id}`).then((res)=>{
-    fetchDynamicApiData("/data")
 
-  })
+  document.querySelectorAll(".delete-logo").forEach((btn) =>
+    btn.addEventListener("click", (e) => {
+      const id = e.target.dataset.id;
+      deleteLogo("/data", id);
+    })
+  );
 };
 
-const showLogoApiData = async (data) => {
-  data && data.forEach((blog, index) => {
-      const logoData = `<tr>
-      <th class="align" scope="row">${++index}</th>
-      <td class="align">
-      <div class="tableimg">
-                <img  src="${blog?.img ?? 'https://picsum.photos/200/300'}" alt="" />
-</div>
-      </td>
-      <td class="align">
-      <button id=${blog?.id} class="btn-danger shadow-none deletelogobyid">delete</button>
-      </td>
-    </tr>`;
-    logoHtml.innerHTML+=logoData;
-    const deleteLogoById = document.getElementsByClassName("deletelogobyid");
-    Array.from(deleteLogoById).forEach((deleteLogo) => {
-      deleteLogo.addEventListener("click", (e) => {
-        e.preventDefault();
-        let ID = e.target.id;
-        justDeleteLogo("/data", ID);
-      });
-    });
-    
-        });
-};
-fetchDynamicApiData("/data", (data) => {
-  showLogoApiData(data);
-});
-const createLogoForm=document.getElementById("createlogoform");
-const logoImg=document.getElementById("img");
-createLogoForm&&createLogoForm.addEventListener("submit",(e)=>{
+createLogoForm?.addEventListener("submit", (e) => {
   e.preventDefault();
-  let fileReader = new FileReader();
+  const fileReader = new FileReader();
   fileReader.onload = () => {
-    let payload = {
-      id:crypto.randomUUID(),
+    const payload = {
+      id: crypto.randomUUID(),
       img: fileReader.result,
-  
     };
-    createLogo("/data",payload)
+    createLogo("/data", payload);
   };
-  
-    fileReader.readAsDataURL(logoImg.files[0]); 
-
+  fileReader.readAsDataURL(logoImg.files[0]);
 });
+
+refreshLogos();
+//////////////////////////////////////////////////////////////////
+
+const onlineHtml = document.getElementById("onlinetabledata");
+const createOnlineForm = document.getElementById("createonlineform");
+const Img = document.getElementById("logoimg");
+const description = document.getElementById("description");
+const header = document.getElementById("header");
+const backgroundImgColor = document.getElementById("backgroundimgcolor");
+
+const createOnline = async (url, data) => {
+  try {
+    await instance.post(url, data);
+    refreshOnline();
+  } catch (error) {
+    console.error("Error creating online entry:", error);
+  }
+};
+const deleteOnline = async (url, id) => {
+  try {
+    await instance.delete(`${url}/${id}`);
+    refreshLogos();
+  } catch (error) {
+    console.error("Error deleting logo:", error);
+  }
+};
+
+
+const refreshOnline = async () => {
+  const data = await fetchData("/online");
+  renderOnline(data);
+};
+
+const renderOnline = (data) => {
+  onlineHtml.innerHTML = "";
+  data.forEach((item, index) => {
+    const onlineRow = `
+      <tr>
+        <th class="align" scope="row">${index + 1}</th>
+        <td class="align">${item.description || "No description"}</td>
+        <td class="align">
+          <div class="tableimg" style="background-color: ${item.backgroundimgcolor || "#ffffff"};">
+            <img src="${item.logoimg || 'https://picsum.photos/200/300'}" alt="Online Logo" />
+          </div>
+        </td>
+        <td class="align">${item.header || "No header"}</td>
+        <td class="align">
+          <button class="btn-danger shadow-none delete-online" data-id="${item.id}">Delete</button>
+        </td>
+      </tr>`;
+    onlineHtml.innerHTML += onlineRow;
+  });
+
+  document.querySelectorAll(".delete-online").forEach((btn) =>
+    btn.addEventListener("click", (e) => {
+      const id = e.target.dataset.id;
+      deleteOnline("/online", id);
+    })
+  );
+};
+
+createOnlineForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const fileReader = new FileReader();
+  fileReader.onload = () => {
+    const payload = {
+      id: crypto.randomUUID(),
+      description: description.value,
+      header: header.value,
+      backgroundimgcolor: backgroundImgColor.value,
+      logoimg: fileReader.result,
+    };
+    createOnline("/online", payload);
+  };
+  fileReader.readAsDataURL(Img.files[0]);
+});
+
+refreshOnline();

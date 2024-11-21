@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lato:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
     </head>
-<body style="font-family: Bricolage Grotesque">
+<body style="font-size: 17px;font-family: Bricolage Grotesque">
     <header class="header">
         <div  class="container-fluid p-custom">
             <div class="row">
@@ -93,6 +93,57 @@
           </table>
         </div>
          </section>
+         <section id="add-online">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-6">
+              <div class="createonline">
+<form id="createonlineform">
+  <div class="mb-3 placeforinput">
+<label for="description">description</label>
+<input id="description" name="description" class="form-control" type="text">
+  </div>
+  <div class="mb-3 placeforinput">
+    <label for="logoimg">logoimg</label>
+    <input id="logoimg" name="logoimg" class="form-control" type="file">
+      </div>
+      <div class="mb-3 placeforinput">
+        <label for="header">header</label>
+        <input id="header" name="header" class="form-control" type="text">
+          </div>
+          <div class="mb-3 placeforinput">
+            <label for="backgroundimgcolor">backgroundimgcolor</label>
+            <input id="backgroundimgcolor" name="backgroundimgcolor" class="form-control" type="color">
+              </div>
+          
+  
+  <button class="button">submit</button>
+</form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+         <section style="padding: 120px 0 170px;background-color: #ffffff;" id="onlineadmin">
+          <div class="container-fluid p-custom">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">description</th>
+                  <th scope="col">backgroundimgcolor</th>
+                  <th scope="col">logoimg</th>
+                  <th scope="col"><header></header></th>
+
+                </tr>
+              </thead>
+              <tbody id="onlinetabledata">
+                
+               
+              </tbody>
+            </table>
+          </div>
+       </section>
     </main>
     <footer style="padding: 96px 0 120px 0;">
       <div  class="container-fluid p-custom">
