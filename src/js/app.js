@@ -110,3 +110,40 @@ const renderContent = async (data) => {
 fetchData("/online", (data) => {
   renderContent(data);
 });
+///////////////////////////////////////////////////////////////////
+const courseContainer = document.getElementById("coursesadd");
+if (!courseContainer){
+  console.error("Content container not found");
+}
+
+const renderCourse = async (data) => {
+  if (data && courseContainer) {
+    data.forEach((item) => {
+      const courseHtml = `
+         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 pb-2">
+<div class="course">
+    <div class="leftside">
+        <div class="iconcontainer">
+            <div style="background-color: ${item.bgcolor ?? '#f0f0f0'};" class="square"><img loading="lazy" decoding="async" width="112" height="112" src="${item?.img ?? "https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Logo-3.webp"}"></div>
+        </div>
+        <h1 style="font-size: 24px;margin-bottom: 12px;">${item?.header}
+        </h1>
+        <p style="font-size: 16px;padding-bottom:12px;">${item?.txt}
+        </p>
+        <span>View Lessons <i  class="ri-arrow-right-s-line dark"></i></span>
+    </div>
+</div>
+            </div>
+
+        
+      `;
+      courseContainer.innerHTML += courseHtml;
+    });
+  } else {
+    console.error("No data or target element to render");
+  }
+};
+
+fetchData("/courses", (data) => {
+  renderCourse(data);
+});

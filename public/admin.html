@@ -133,7 +133,8 @@
                   <th scope="col">description</th>
                   <th scope="col">backgroundimgcolor</th>
                   <th scope="col">logoimg</th>
-                  <th scope="col"><header></header></th>
+                  <th scope="col">header</th>
+                  <th scope="col">action</th>
 
                 </tr>
               </thead>
@@ -144,6 +145,58 @@
             </table>
           </div>
        </section>
+       <section id="addcourse">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-6">
+              <div class="createcourse">
+<form id="createcourseform">
+  <div class="mb-3 placeforinput">
+<label for="courseimg">courselogo</label>
+<input id="courseimg" name="courseimg" class="form-control shadow-none" type="file">
+  </div>
+  <div class="mb-3 placeforinput">
+    <label for="bgcolor">bgcolor</label>
+    <input id="bgcolor" name="bgcolor" class="form-control shadow-none" type="color">
+      </div>
+      <div class="mb-3 placeforinput">
+        <label for="cheader">header</label>
+        <input id="cheader" name="cheader" class="form-control shadow-none" type="text">
+          </div>
+      <div class="mb-3 placeforinput">
+        <label for="ctext">txt</label>
+        <input id="ctext" name="ctext" class="form-control shadow-none" type="text">
+          </div>
+          
+  <button class="button ">submit</button>
+</form>
+              </div>
+            </div>
+          </div>
+        </div>
+       </section>
+       <section style="padding: 120px 0;" id="coursesadmin">
+        <div class="conatiner-fluid p-custom">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">id</th>
+                      <th scope="col">img</th>
+                      <th scope="col">bgcolor</th>
+                      <th scope="col">header</th>
+                      <th scope="col">txt</th>
+                      <th scope="col">action</th>
+
+
+                    </tr>
+                  </thead>
+                  <tbody id="coursetabledata">
+                   
+                  </tbody>
+                </table>
+              
+            
+     </section>
     </main>
     <footer style="padding: 96px 0 120px 0;">
       <div  class="container-fluid p-custom">

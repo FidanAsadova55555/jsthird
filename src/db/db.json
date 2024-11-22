@@ -80,5 +80,49 @@
       "logoimg": "https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Why-Icon-4.webp",
       "description": "Online education allows teachers and students to set their own pace of learning, and there is added flexibility in setting a schedule."
     }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "img": "https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Courses-Icon-1.webp",
+      "bgcolor": "#F4AB7F",
+      "header": "Business and Management",
+      "txt": "32 online courses"
+    },
+    {
+      "id": "2",
+      "img": "https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Courses-Icon-2.webp",
+      "bgcolor": "#BAEA85",
+      "header": "Technology and IT",
+      "txt": "24 online courses"
+    },
+    {
+      "id": "3",
+      "img": "https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Courses-Icon-3.webp",
+      "bgcolor": "#A1BEFA",
+      "header": "Communication",
+      "txt": "11 online courses"
+    },
+    {
+      "id": "4",
+      "img": "https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Courses-Icon-4.webp",
+      "bgcolor": "#F9D261",
+      "header": "Arts and Design",
+      "txt": "56 online courses"
+    },
+    {
+      "id": "5",
+      "img": "https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Courses-Icon-5.webp",
+      "bgcolor": "#A1DFFA",
+      "header": "Marketing",
+      "txt": "20 online courses"
+    },
+    {
+      "id": "6",
+      "img": "https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Courses-Icon-6.webp",
+      "bgcolor": "#F6C143",
+      "header": "Personal Development",
+      "txt": "17 online courses"
+    }
   ]
 }

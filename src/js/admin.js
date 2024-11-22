@@ -100,7 +100,7 @@ const createOnline = async (url, data) => {
 const deleteOnline = async (url, id) => {
   try {
     await instance.delete(`${url}/${id}`);
-    refreshLogos();
+    refreshOnline();
   } catch (error) {
     console.error("Error deleting logo:", error);
   }
@@ -121,8 +121,12 @@ const renderOnline = (data) => {
         <td class="align">${item.description || "No description"}</td>
         <td class="align">
           <div class="tableimg" style="background-color: ${item.backgroundimgcolor || "#ffffff"};">
-            <img src="${item.logoimg || 'https://picsum.photos/200/300'}" alt="Online Logo" />
           </div>
+        </td>
+        <td class="align">
+       <div class="tableimg">
+            <img src="${item.logoimg || 'https://picsum.photos/200/300'}" alt="Logo" />
+          </div> 
         </td>
         <td class="align">${item.header || "No header"}</td>
         <td class="align">
@@ -157,3 +161,89 @@ createOnlineForm?.addEventListener("submit", (e) => {
 });
 
 refreshOnline();
+/////////////////////////////////////////////////////////////////////
+
+
+const courseTableData = document.getElementById("coursetabledata");
+const createCourseForm = document.getElementById("createcourseform");
+const courseImg = document.getElementById("courseimg"); 
+const ctext = document.getElementById("ctext");
+const cheader = document.getElementById("cheader");
+const bgcolor = document.getElementById("bgcolor");
+
+const createCourse = async (url, data) => {
+  try {
+    await instance.post(url, data);
+    refreshCourse();
+  } catch (error) {
+    console.error("Error creating course entry:", error);
+  }
+};
+
+const deleteCourse = async (url, id) => {
+  try {
+    await instance.delete(`${url}/${id}`);
+    refreshCourse();
+  } catch (error) {
+    console.error("Error deleting course:", error);
+    
+
+  }
+};
+
+const refreshCourse = async () => {
+  const data = await fetchData("/courses");
+  renderCourse(data); 
+};
+
+const renderCourse = (data) => {
+  courseTableData.innerHTML = ""; 
+  data.forEach((item, index) => {
+    const courseRow = `
+      <tr>
+        <th class="align" scope="row">${index + 1}</th>
+       <td class="align">
+       <div class="tableimg">
+            <img src="${item.img || 'https://picsum.photos/200/300'}" alt="Logo" />
+          </div> 
+        </td>
+         <td class="align">
+          <div class="tableimg" style="background-color: ${item.bgcolor || "#ffffff"};">
+          </div>
+        </td>
+        <td class="align">${item.header || "No header"}</td>
+                <td class="align">${item.txt || "No txt"}</td>
+
+        <td class="align">
+          <button class="btn-danger shadow-none delete-course" data-id="${item.id}">Delete</button>
+        </td>
+      </tr>`;
+    courseTableData.innerHTML += courseRow;
+  });
+
+  document.querySelectorAll(".delete-course").forEach((btn) =>
+    btn.addEventListener("click", (e) => {
+      const id = e.target.dataset.id;
+      deleteCourse("/courses", id); 
+    })
+  );
+};
+
+createCourseForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const fileReader = new FileReader();
+  fileReader.onload = () => {
+    const payload = {
+      id: crypto.randomUUID(),
+      txt: ctext.value,
+      header: cheader.value,
+      bgcolor: bgcolor.value,
+      img: fileReader.result,
+    };
+    createCourse("/courses", payload); 
+  };
+  fileReader.readAsDataURL(courseImg.files[0]); 
+});
+
+refreshCourse(); 
+////////////////////////////////////////////////////////////////////////////////////
