@@ -1,0 +1,119 @@
+#accordion {
+    .accordion-item{
+        background-color: transparent;
+        
+    }
+    .accordion-body {
+        padding-left:0;
+        padding-right: 0;
+    }
+    .accordion-flush .accordion-item:last-child {
+      border-bottom: 1px solid $color-secondary;
+    }
+  
+    .accordion-item:not(:first-of-type) {
+      border-top: 1px solid $color-secondary;
+    }
+  
+    .accordion-header {
+        h1{
+            transition: all 0.3s ease-in-out;
+            
+        }
+       &:hover,
+      &:focus,
+      &:active {
+        box-shadow: none;
+        background-color: transparent;
+        outline: none;
+        h1{
+            color: $color-primary;
+        }
+
+      }
+     
+
+    }
+  
+    .accordion-button {
+        padding-right:0px;
+        padding-left: 0px; 
+        margin-right: -4px; 
+background-color: transparent;
+border: none;
+      &:hover,
+      &:active,
+      &:focus {
+        box-shadow: none;
+        background-color: transparent;
+      }
+  
+      &::after {
+        content: ''; 
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: transform 0.3s ease, background-image 0.3s ease;
+        width: 40px;
+        height: 40px;
+        
+      }
+  
+      &:not(.collapsed)::after {
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"%3E%3Cpath d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"%3E%3C/path%3E%3C/svg%3E'); 
+        transform: scaleY(-1); 
+    }
+  
+      &.collapsed::after {
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"%3E%3Cpath d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"%3E%3C/path%3E%3C/svg%3E'); 
+        transform: rotate(0deg);
+        
+      }
+      &:not(.collapsed) {
+        color:$color-primary;
+        background-color: transparent;
+        box-shadow:0;
+      }
+    }
+    .accordionleftimg{
+      position: relative;
+
+      align-content: center;
+    align-items: center;
+    background-color:#BAEA85;
+    background-image: url(https://outgrid.uicore.co/elearning/wp-content/uploads/sites/5/2023/06/eLearning-Transform-BG.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 280px 10px 10px 10px;
+    --e-column-margin-right: 10px;
+    --e-column-margin-left: 10px;
+    padding: 40px 40px 40px 70px;
+    border-radius: 24px;
+    .absolute{
+      position: absolute;
+      width: 140px;
+      overflow: hidden;
+border-radius: 100px 100px 100px 100px;
+box-shadow: 0px 18px 46px 0px rgba(46.999999999999986, 64.99999999999999, 87.99999999999997, 0.2);
+bottom: 80px;
+left: 26px;
+background-color: #ffffff;
+z-index: 999;
+img{
+@extend %img;
+
+}
+    }
+      .containerforimg{
+        border-radius: 16px;
+        max-width: 441px;
+        max-height: 296px;
+        overflow: hidden;
+        img{
+          @extend %img;
+        }
+       
+      }
+    }
+  }
+  

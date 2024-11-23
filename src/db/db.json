@@ -124,5 +124,23 @@
       "header": "Personal Development",
       "txt": "17 online courses"
     }
-  ]
+  ],
+  
+    "accordionData": [
+      {
+        "id":"1",
+        "title": "High-quality video lessons",
+        "description": "Whether you’re looking to improve your business skills, expand your knowledge of technology, or learn a new language, we’ve got you covered."
+      },
+      {  "id":"2",
+        "title": "Personalized feedback and support",
+        "description": "Get personalized feedback from experts to enhance your skills and stay motivated."
+      },
+      {"id":"3",
+        "title": "Access to course materials and resources",
+        "description": "Gain unlimited access to high-quality course materials and resources."
+      }
+    ]
+  
+  
 }

@@ -52,7 +52,7 @@ const renderLogos = (data) => {
           </div>
         </td>
         <td class="align">
-          <button class="btn-danger shadow-none delete-logo" data-id="${logo.id}">Delete</button>
+          <button class="p-1 ps-2 pe-2 btn-danger border-0 rounded-pill  shadow-none delete-logo" data-id="${logo.id}">Delete</button>
         </td>
       </tr>`;
     logoHtml.innerHTML += logoRow;
@@ -130,7 +130,7 @@ const renderOnline = (data) => {
         </td>
         <td class="align">${item.header || "No header"}</td>
         <td class="align">
-          <button class="btn-danger shadow-none delete-online" data-id="${item.id}">Delete</button>
+          <button class="p-1 ps-2 pe-2 border-0 btn-danger rounded-pill shadow-none delete-online" data-id="${item.id}">Delete</button>
         </td>
       </tr>`;
     onlineHtml.innerHTML += onlineRow;
@@ -215,7 +215,7 @@ const renderCourse = (data) => {
                 <td class="align">${item.txt || "No txt"}</td>
 
         <td class="align">
-          <button class="btn-danger shadow-none delete-course" data-id="${item.id}">Delete</button>
+          <button class="border-0 p-1 ps-2 pe-2 btn-danger rounded-pill shadow-none delete-course" data-id="${item.id}">Delete</button>
         </td>
       </tr>`;
     courseTableData.innerHTML += courseRow;
@@ -247,3 +247,82 @@ createCourseForm?.addEventListener("submit", (e) => {
 
 refreshCourse(); 
 ////////////////////////////////////////////////////////////////////////////////////
+const accordtabledata = document.getElementById("accordtabledata");
+const changeform = document.getElementById("changeforms");
+const title = document.getElementById("title");
+const text = document.getElementById("info");
+const id = document.getElementById("id");
+
+
+const fetchaccordData = async (url) => {
+  try {
+    const res = await instance.get(url);
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return [];
+  }
+};
+
+const updateData = async (id, updatedData) => {
+  try {
+    await instance.put(`/accordionData/${id}`, updatedData); 
+    alert("Məlumat uğurla dəyişdirildi!");
+  } catch (error) {
+    console.error("Error updating data:", error);
+    alert("Məlumatı dəyişmək mümkün olmadı.");
+  }
+};
+
+const refresh = async () => {
+  const data = await fetchaccordData("/accordionData");
+  renderAccordion(data);
+};
+
+const renderAccordion = (data) => {
+  accordtabledata.innerHTML = "";
+  data.forEach((item) => {
+    const courseRow = `
+      <tr>
+        <th class="align" scope="row">${item.id}</th>
+        <td class="align">${item?.title || "No header"}</td>
+        <td class="align">${item?.description || "No txt"}</td>
+      </tr>`;
+    accordtabledata.innerHTML += courseRow;
+  });
+};
+
+
+changeform?.addEventListener("submit", async (e) => {
+  e.preventDefault(); 
+  if (!id.value.trim()) {
+    alert("ID sahəsi boş buraxılıb.");
+    return;
+  }
+  if (!title.value.trim()) {
+    alert("Başlıq sahəsi boş buraxılıb.");
+    return;
+  }
+  if (!text.value.trim()) {
+    alert("Təsvir sahəsi boş buraxılıb.");
+    return;
+  }
+  
+
+  const data = await fetchaccordData("/accordionData");
+  const matchingItem = data.find((item) => item.id === String(id.value.trim()));
+
+  if (matchingItem) {
+    const updatedData = {
+      ...matchingItem, 
+      title: title.value.trim(), 
+      description: text.value.trim(), 
+    };
+
+    await updateData(matchingItem.id, updatedData); 
+    refresh(); 
+  } else {
+    alert("Bu ID ilə uyğun məlumat tapılmadı.");
+  }
+});
+refresh();

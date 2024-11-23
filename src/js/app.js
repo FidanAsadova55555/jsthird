@@ -147,3 +147,27 @@ const renderCourse = async (data) => {
 fetchData("/courses", (data) => {
   renderCourse(data);
 });
+//////////////////////////////////////////////////////////////////////////////
+const body = document.getElementsByClassName("body");
+const head = document.getElementsByClassName("head");
+
+if (body.length === 0 && head.length === 0) {
+  console.error("Content containers not found");
+}
+
+const renderAcc = async (data) => {
+  Array.from(body).forEach((element, index) => {
+    element.innerHTML = data[index]?.description || "Description not available";
+  });
+
+  Array.from(head).forEach((element, index) => {
+    element.innerHTML = data[index]?.title || "Title not available";
+  });
+};
+
+
+
+fetchData("/accordionData", (data) => {
+  renderAcc(data);
+});
+
