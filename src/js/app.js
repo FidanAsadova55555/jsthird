@@ -24,7 +24,6 @@ const instance = axios.create({
   baseURL: "http://localhost:3001",
   timeout: 3000,
 });
-
 const fetchData = async (url, cb) => {
   try {
     const res = await instance.get(url);
@@ -33,6 +32,15 @@ const fetchData = async (url, cb) => {
     console.error("Error fetching data:", error);
   }
 };
+const userCheck=async()=>{
+  const token=sessionStorage.getItem("token");
+  console.log(token,"cgffhgjy");
+console.log(window.location.href);
+if(!token){
+  window.location.href="http://127.0.0.1:5500/public/login.html";
+}
+};
+userCheck();
 
 const LogoData = document.getElementById("logo");
 if (!LogoData) {
@@ -120,7 +128,7 @@ const renderCourse = async (data) => {
   if (data && courseContainer) {
     data.forEach((item) => {
       const courseHtml = `
-         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 pb-2">
+         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 pb-2">
 <div class="course">
     <div class="leftside">
         <div class="iconcontainer">

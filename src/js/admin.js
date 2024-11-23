@@ -1,3 +1,27 @@
+"use strict";
+
+let lastScrollTop = 0;
+
+window.addEventListener("scroll", function() {
+  const header = document.querySelector(".header");
+  const currentScroll = window.scrollY;
+
+  if (currentScroll > lastScrollTop) {
+    header.classList.add("hidden");
+  } else {
+    header.classList.remove("hidden");
+    header.classList.add("scrolled"); 
+  }
+
+  if (currentScroll === 0) {
+    header.classList.remove("scrolled");
+  }
+
+  lastScrollTop = currentScroll; 
+});
+////////////////////////////////////////////////////////////
+
+
 const instance = axios.create({
   baseURL: "http://localhost:3001",
   timeout: 3000,

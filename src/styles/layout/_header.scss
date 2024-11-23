@@ -15,6 +15,7 @@ padding: 0  136px;
     .logoimg{
         min-width: 108px;
         min-height: 32px;
+        
         overflow: hidden;
         img{
             @extend %img;
@@ -24,7 +25,8 @@ padding: 0  136px;
 }
 #headerul{
     @include flexbox(center, center);
-    li a{
+    li  { 
+    a{
 padding: 0 20px;
  font-family: "Bricolage Grotesque", sans-serif;
 line-height: 80px;
@@ -38,7 +40,7 @@ transition: all ease-in-out 0.5s;
 }
     }
 
-}
+}}
 
 .right{
     @include flexbox(center,baseline,row,25px);}
@@ -105,3 +107,11 @@ transition: all ease-in-out 0.5s;
     .p-custom {
         padding: 0 20px; 
     }}
+    @media (max-width: 991px) {
+       #headerul{li {
+          display: none;
+        }
+
+      }
+      
+    }

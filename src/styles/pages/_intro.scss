@@ -115,7 +115,7 @@ p{
 .relative-container {
     position: relative;
     width: 100%;
-    padding-top: 100%; /* Maintain aspect ratio for the container */
+    padding-top: 100%; 
   }
   
   .background-img {
@@ -133,7 +133,6 @@ p{
     z-index: 2;
   }
   
-  /* Top Left Image */
   .top-left {
     top: 2%;
     left: 5%;
@@ -142,7 +141,6 @@ p{
     border-radius: 60px;
   }
   
-  /* Top Right Image */
   .top-right {
     top: 9%;
     right: 10%;
@@ -151,7 +149,6 @@ p{
     border-radius: 50%;
   }
   
-  /* Bottom Left Image */
   .bottom-left {
     bottom: 10%;
     left: 10%;
@@ -160,7 +157,6 @@ p{
     border-radius: 50%;
   }
   
-  /* Bottom Right Image */
   .bottom-right {
     bottom: 2%;
     right: 5%;
@@ -169,7 +165,6 @@ p{
     border-radius: 60px;
   }
   
-  /* Center Image */
   .center {
     top: 50%;
     left: 50%;
@@ -178,23 +173,22 @@ p{
     border-radius: 12px;
     outline: 25px solid #e2e0db;
     transform: translate(-50%, -50%);
-    width: 100%; /* Makes it responsive */
-    height: auto; /* Maintains aspect ratio */
+    width: 100%; 
+    height: auto; 
   }
   
-  /* Responsive adjustments */
   @media (max-width: 768px) {
     .col-6 {
       max-width: 100%;
     }
   
     .absolute-img {
-      max-width: 150px; /* Adjust size for smaller screens */
+      max-width: 150px; 
     }
   
     .center {
       max-width: 200px;
-      outline: 20px solid #e2e0db; /* Adjust border size on smaller screens */
+      outline: 20px solid #e2e0db;
     }
   }
   
